@@ -4,15 +4,21 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PersonaService } from './services/persona.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,    
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule    
+    
   ],
   providers: [PersonaService],
   bootstrap: [AppComponent]

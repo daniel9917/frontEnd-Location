@@ -1,1 +1,36 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-link{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: dodgerblue;
+    
+}
+
+.header{
+    margin-top: 0px;
+    background-color: darkseagreen;
+    
+    
+}
+.row{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title{
+    color: dodgerblue;
+}
+
+footer {        
+    position: absolute;    
+    bottom: 0px;     
+    width: 100%;
+    height: 185px;        
+    background-color: darkseagreen;
+}
+
+

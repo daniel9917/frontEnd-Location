@@ -2,6 +2,3 @@ input.ng-invalid{
     border-bottom: 5px solid red;
 }
 
-input.ng-valid{
-    border-bottom: 5px solid green;
-}
