@@ -1,0 +1,14 @@
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+th {
+    color: dodgerblue;
+}
+td {
+    color: rgb(73, 104, 86);
+}

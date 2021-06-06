@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center table-wrapper-scroll-y my-custom-scrollbar ">
+        <table class="table table-bordered table-hover table-striped mb-0">
+            <thead>
+                <tr class="table-success">
+                    <th scope="col">Location id</th>
+                    <th scope="col">Location name</th>
+                    <th scope="col">Area in m<sup>2</sup></th>
+                    <th scope="col">Parent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let location of locations">
+                    <td>{{location.id}}</td>
+                    <td>{{location.name}}</td>
+                    <td>{{location.area_m2}}</td>
+                    <td *ngIf="(location.parentLocation != null); else noParent">{{location.parentLocation.name}}</td>
+                    <ng-template #noParent>
+                        <td>No parent location.</td>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class = "col-2">
+            <button type="submit" class="btn btn-primary" onclick="window.location.reload()">Reload</button>
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <br>
+
+    </div>
+    <div class="row justify-content-center">
+        <br>
+
+
+    </div>
+    <div class="row justify-content-center">
+        <br>
+
+    </div>
+    <br>
+    <br>
+</div>

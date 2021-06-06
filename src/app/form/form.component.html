@@ -1,0 +1,54 @@
+<div class="container">
+    <br>
+    <div class="row justify-content-center">
+      <div class ="col-4">
+        <h1  class="text-center title" >Locations Form</h1>
+      </div>
+      
+    </div>
+    
+    <br>
+    <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+  
+      <div class="row alling-items-center">
+        <div class="col-3">
+          <label for="name" class="form-label"> Name of the Location: </label>
+        </div>
+        <div class="col">
+          <input class="form-control" type="text" formControlName="name" id="name" placeholder="Name here">
+        </div>
+      </div>
+      <br>
+      <div class="row alling-items-center">
+        <div class="col-3 ">
+          <label for="area" class="form-label"> Location Area in m<sup>2</sup>: </label>
+        </div>
+        <div class="col">
+          <input class="form-control" type="number" formControlName="area_m2" id="area_m2" placeholder="0">
+        </div>
+      </div>
+      <br>
+      <div class="row alling-items-center">
+        <div class="col-3">
+          <label for="selectParent" class="form-label"> Parent Location: </label>
+        </div>
+        <div class="col">
+          <select class="form-select" aria-label="Default select example" id="selectParent"
+            formControlName="parentLocation">
+            <option class="form-control" *ngFor=" let location of locations" value="{{location.id}}">{{location.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row justify-content-around">
+        <div class="col-2">
+          <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary" type="reset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+ 
