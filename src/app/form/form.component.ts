@@ -41,26 +41,36 @@ export class FormComponent implements OnInit {
   } 
   onSubmit(): any {
 
+     
+    console.log(typeof(this.locationForm.get('area_m2')?.value) == "string");
+
+    if (this.locationForm.get('name')?.value == ""){
+      return alert("Error: The minimun lenght of a valid name is 1.");
+    }
+
+    if (typeof(this.locationForm.get('area_m2')?.value) == "string" || (this.locationForm.get('area_m2')?.value < 1)){
+      return alert("Please input a valid area, It must have a minimun value of 1.");
+    }
+
     this.newLocation.setName(this.locationForm.get('name')?.value);
     this.newLocation.setArea(this.locationForm.get('area_m2')?.value);
-
+    console.log(this.locationForm.get('parentLocation')?.value);
     for (let index = 0; index < this.locations.length; index++) {
       if (this.locations[index].name === this.newLocation.name){
         return alert("Error: Una ubicación con el mismo nombre ya está registrada.");
       }       
     }
     
-    if (this.locationForm.get('parentLocation')?.value == -1){
+    if (this.locationForm.get('parentLocation')?.value == -1 || this.locationForm.get('parentLocation')?.value === ""){
       return this.personaService.postLocations(this.newLocation).subscribe((resp:any)=>{
         console.log(resp);
       });
     }
 
-    else{
-      
-      const id = this.locationForm.get('parentLocation')?.value;      
-      
-      
+    else{    
+
+      console.log(this.locationForm.get('parentLocation')?.value);
+      const id = this.locationForm.get('parentLocation')?.value;                  
 
       return this.personaService.getLocationById(id).subscribe((res:any)=>{
         this.parentLocation.setId(res.id);

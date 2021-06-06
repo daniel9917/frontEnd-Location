@@ -15,7 +15,7 @@
           <label for="name" class="form-label"> Name of the Location: </label>
         </div>
         <div class="col">
-          <input class="form-control" type="text" formControlName="name" id="name" placeholder="Name here">
+          <input class="form-control" type="text" formControlName="name" id="name" placeholder="Name here" required>
         </div>
       </div>
       <br>
@@ -24,7 +24,7 @@
           <label for="area" class="form-label"> Location Area in m<sup>2</sup>: </label>
         </div>
         <div class="col">
-          <input class="form-control" type="number" formControlName="area_m2" id="area_m2" placeholder="0">
+          <input class="form-control" type="number" formControlName="area_m2" min="1" id="area_m2" placeholder="0">
         </div>
       </div>
       <br>
@@ -46,7 +46,7 @@
           <button class="btn btn-success" type="submit">Submit</button>
         </div>
         <div class="col-2">
-          <button class="btn btn-primary" type="reset">Reset</button>
+          <button class="btn btn-primary" type="reset" onclick="window.location.reload()">Reset</button>
         </div>
       </div>
     </form>
